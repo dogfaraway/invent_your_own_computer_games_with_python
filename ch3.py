@@ -7,8 +7,8 @@ myName = input()
 number = random.randint(1, 20)
 print('Well, ' + myName + ' I am thinking of a number between 1 and 20.')
 
-for i in range(6):
-    print('You have %s chances left...\n Take a guess :)' % (6 - i))
+for guessesTaken in range(6):  # guessesTaken is i
+    print('You have %s chances left...\n Take a guess :)' % (6 - guessesTaken))
     try:
         guess = int(input())
     except:
@@ -21,8 +21,8 @@ for i in range(6):
         break
 
 if guess == number:
-    guessesTaken = str(guessesTaken)
-    print('Good job, %s ! You guess my number in %s guesses!' % (myName, i + 1))
+    # guessesTaken = str(guessesTaken)
+    print('Good job, %s ! You guess my number in %s guesses!' % (myName, guessesTaken + 1))
 
 if guess != number:
     number = str(number)
